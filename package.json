@@ -1,0 +1,36 @@
+{
+    "name": "@chathqio/app-sdk-node",
+    "description": "The official NodeJS SDK for ChatHQ 3rd party extensions and integrations",
+    "version": "0.44.1",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chathqio/app-sdk-node.git"
+    },
+    "author": {
+        "name": "ChatHQ, Inc.",
+        "url": "https://www.chathq.io"
+    },
+    "scripts": {
+        "clean": "turbo run clean",
+        "build": "turbo run build",
+        "format": "turbo run format",
+        "lint": "turbo run lint",
+        "lint:fix": "turbo run lint --fix",
+        "test": "turbo run test",
+        "vmajor": "yarn workspaces foreach -v --topological-dev version major",
+        "vminor": "yarn workspaces foreach -v --topological-dev version minor",
+        "vpatch": "yarn workspaces foreach -v --topological-dev version patch",
+        "clog": "conventional-changelog -p angular -i CHANGELOG.md -o changelog-temp.md"
+    },
+    "workspaces": {
+        "packages": [
+            "packages/*"
+        ]
+    },
+    "devDependencies": {
+        "turbo": "^1.10.9"
+    },
+    "packageManager": "yarn@3.6.1"
+}

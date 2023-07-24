@@ -1,26 +1,27 @@
 module.exports = {
-    root: true,
-    env: {
-        node: true,
-        jest: true
-    },
-    ignorePatterns: ['lib', '.eslintrc.*', 'vite.config.*'],
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        project: 'tsconfig.json',
-        sourceType: 'module'
-    },
-    plugins: ['@typescript-eslint/eslint-plugin', 'import', 'prettier'],
-    extends: [
-        'plugin:prettier/recommended',
-        'plugin:import/recommended',
-        'plugin:import/typescript'
-    ],
-    settings: {
-        'import/parsers': {
-            '@typescript-eslint/parser': ['.ts', '.spec.ts']
-        }
-    }
+    extends: ['../../eslint-config/standard']
+    // root: true,
+    // env: {
+    //     node: true,
+    //     jest: true
+    // },
+    // ignorePatterns: ['lib', '.eslintrc.*', 'vite.config.*'],
+    // parser: '@typescript-eslint/parser',
+    // parserOptions: {
+    //     project: 'tsconfig.json',
+    //     sourceType: 'module'
+    // },
+    // plugins: ['@typescript-eslint/eslint-plugin', 'import', 'prettier'],
+    // extends: [
+    //     'plugin:prettier/recommended',
+    //     'plugin:import/recommended',
+    //     'plugin:import/typescript'
+    // ],
+    // settings: {
+    //     'import/parsers': {
+    //         '@typescript-eslint/parser': ['.ts', '.spec.ts']
+    //     }
+    // }
     // rules: {
     //     semi: ['error', 'always'],
     //     strict: 'error',

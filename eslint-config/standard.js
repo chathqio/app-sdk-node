@@ -4,7 +4,7 @@ module.exports = {
         node: true,
         jest: true
     },
-    ignorePatterns: ['.eslintrc.js'],
+    ignorePatterns: ['.eslintrc.*', 'vite.config.*'],
     parser: '@typescript-eslint/parser',
     parserOptions: {
         project: 'tsconfig.json',

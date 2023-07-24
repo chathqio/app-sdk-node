@@ -39,7 +39,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         });
 
         const { items, ...pagination } = data?.account?.engagementWidgets;
-        const widgets = pagination.items?.map((item: any) => {
+        const widgets = items?.map((item: any) => {
             return {
                 id: item.id,
                 name: item.data.config.name,

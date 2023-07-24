@@ -60,4 +60,30 @@ describe(ChatHQAppClient.name, () => {
             expectTypeOf(ssoToken.accountId).toBeString();
         });
     });
+
+    describe('listEngagementWidgets', () => {
+        it('should return a paginated list of widget summary objects', async () => {
+            const service = serviceFactory()();
+            const ssoToken = await service.generateAccessToken(SSO_TOKEN);
+
+            const widgets = await service.listEngagementWidgets(
+                ssoToken.accessToken,
+                {
+                    offset: 0,
+                    limit: 10,
+                    accountId: ssoToken.accountId
+                }
+            );
+
+            expectTypeOf(widgets).toBeObject();
+            expect(widgets).toHaveProperty('items');
+            expect(widgets).toHaveProperty('offset');
+            expect(widgets).toHaveProperty('limit');
+            expect(widgets).toHaveProperty('count');
+
+            expect(widgets.items).toBeDefined();
+            expectTypeOf(widgets.items).toBeArray();
+            expect(widgets.items.length).toBeGreaterThan(0);
+        });
+    });
 });

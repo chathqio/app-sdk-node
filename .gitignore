@@ -29,9 +29,6 @@ coverage
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 
-# Bower dependency directory (https://bower.io/)
-bower_components
-
 # node-waf configuration
 .lock-wscript
 
@@ -65,6 +62,9 @@ web_modules/
 
 # Optional REPL history
 .node_repl_history
+
+# Local data
+/.local
 
 # Output of 'npm pack'
 *.tgz
@@ -128,3 +128,7 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# build directories
+/packages/*/lib
+/packages/*/build

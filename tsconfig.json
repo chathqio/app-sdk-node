@@ -77,6 +77,10 @@
 		 * compatibility. 
 		 */
 		"esModuleInterop": true,
+        /**
+         * Allow importing JSON files as modules.
+         */
+        "resolveJsonModule": true,
 		/**
 		 * Allow 'import x from y' when a module doesn't have a default export. 
 		 */

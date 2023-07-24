@@ -1,0 +1,22 @@
+{
+    "editor.rulers": [
+        80
+    ],
+    "eslint.workingDirectories": [
+        "packages/sdk-node",
+    ],
+    "eslint.lintTask.options": "-c .eslintrc.vscode.js",
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js,${capture}.spec.ts,${capture}.options.ts",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts, ${capture}.http",
+        ".eslintrc.json": ".eslintrc.*.json, .eslintignore",
+        ".eslintrc.js": ".eslintrc.*.js, .eslintignore",
+        ".eslintrc.cjs": ".eslintrc.*.cjs, .eslintignore",
+        "tsconfig.json": "tsconfig.*.json, tsconfig.tsbuildinfo",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    },
+    "vite.autoStart": false,
+    "vite.buildCommand": "yarn build",
+    "vite.showTerminal": true,
+    "vite.port": 5173,
+}

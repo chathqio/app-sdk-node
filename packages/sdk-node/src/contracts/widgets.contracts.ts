@@ -17,3 +17,20 @@ export type ListEngagementWidgetsInput = {
      */
     limit?: number;
 };
+
+export type WidgetSummary = {
+    /**
+     * The ID of the widget
+     */
+    id: string;
+
+    /**
+     * The name of the widget
+     */
+    name: string;
+
+    /**
+     * Whether the widget is enabled
+     */
+    enabled: boolean;
+};

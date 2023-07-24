@@ -5,3 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/). This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## 0.1.0 (2023-07-24)
+
+### Features
+
+- add plain TS app client ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))
+- add generateAccessToken opration ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))
+- add listEngagementWidgets opration ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))

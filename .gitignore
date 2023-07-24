@@ -132,3 +132,4 @@ dist
 # build directories
 /packages/*/lib
 /packages/*/build
+/changelog-temp.md

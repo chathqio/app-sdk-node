@@ -16,9 +16,7 @@ const external = [
     'react',
     'react-dom',
     // core
-    '@chathqio/app-sdk-node',
-    '@chathqio/app-sdk-contracts',
-    '@chathqio/app-sdk-eslint-config'
+    '@chathqio/app-sdk-node'
 ];
 
 function isObject(item: unknown): item is Record<string, unknown> {

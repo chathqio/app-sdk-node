@@ -1,7 +1,7 @@
 {
     "name": "@chathqio/app-sdk-node",
     "description": "The official NodeJS SDK for ChatHQ 3rd party extensions and integrations",
-    "version": "0.44.1",
+    "version": "0.1.0",
     "license": "MIT",
     "main": "lib/index.js",
     "author": {
@@ -32,7 +32,6 @@
         "zod": "^3.21.4"
     },
     "devDependencies": {
-        "@chathqio/app-sdk-eslint-config": "workspace:*",
         "@types/eslint": "^8.44.0",
         "@types/node": "^18.16.19",
         "@typescript-eslint/eslint-plugin": "^5.62.0",

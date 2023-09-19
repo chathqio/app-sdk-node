@@ -86,4 +86,15 @@ describe(ChatHQAppClient.name, () => {
             expect(widgets.items.length).toBeGreaterThan(0);
         });
     });
+
+    describe('listWebhooks', () => {
+        it('should return a list of webhooks', async () => {
+            const service = serviceFactory()();
+            const ssoToken = await service.generateAccessToken(SSO_TOKEN);
+            const webhooks = await service.listWebhooks(ssoToken.accessToken);
+            expectTypeOf(webhooks).toBeArray();
+            expect(webhooks).toBeDefined();
+            expect(webhooks).not.toBeNull();
+        });
+    });
 });

@@ -70,9 +70,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
     //#region Webhooks
     async listWebhooks(accessToken: string) {
         try {
-            const {
-                data: { data }
-            } = await this.get<{ data: IWebhookBillingSubscription[] }>(
+            const { data } = await this.get<IWebhookBillingSubscription[]>(
                 `${ENDPOINT_DATA_WEBHOOKS}/all`,
                 accessToken,
                 {}
@@ -86,9 +84,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
 
     async deleteAllWebhooks(accessToken: string) {
         try {
-            const {
-                data: { data }
-            } = await this.delete<{
+            const { data } = await this.delete<{
                 data: {
                     acknowledged: boolean;
                     deletedCount: number;
@@ -108,17 +104,13 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         url: string
     ) {
         try {
-            const {
-                data: { data }
-            } = await this.post<{ data: IWebhookBillingSubscription }>(
-                ENDPOINT_DATA_WEBHOOKS,
-                accessToken,
-                {
-                    accountId,
-                    event,
-                    url
-                }
-            );
+            const { data } = await this.post<{
+                data: IWebhookBillingSubscription;
+            }>(ENDPOINT_DATA_WEBHOOKS, accessToken, {
+                accountId,
+                event,
+                url
+            });
 
             return data;
         } catch (err) {
@@ -136,9 +128,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
             const requestParams = `accountId=${accountId}&event=${event}&url=${encodeURI(
                 url
             )}`;
-            const {
-                data: { data }
-            } = await this.get<{ data: { id: string } }>(
+            const { data } = await this.get<{ data: { id: string } }>(
                 `${ENDPOINT_DATA_WEBHOOKS}?${requestParams}`,
                 accessToken
             );
@@ -156,19 +146,15 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         url: string
     ) {
         try {
-            const {
-                data: { data }
-            } = await this.delete<{ data: IWebhookBillingSubscription }>(
-                `${ENDPOINT_DATA_WEBHOOKS}`,
-                accessToken,
-                {
-                    data: {
-                        accountId,
-                        event,
-                        url
-                    }
+            const { data } = await this.delete<{
+                data: IWebhookBillingSubscription;
+            }>(`${ENDPOINT_DATA_WEBHOOKS}`, accessToken, {
+                data: {
+                    accountId,
+                    event,
+                    url
                 }
-            );
+            });
 
             return data;
         } catch (err) {
@@ -178,9 +164,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
 
     async getWebhookEventNames(accessToken: string) {
         try {
-            const {
-                data: { data }
-            } = await this.get<{ data: string[] }>(
+            const { data } = await this.get<{ data: string[] }>(
                 `${ENDPOINT_DATA_WEBHOOKS}/event-names`,
                 accessToken,
                 {}

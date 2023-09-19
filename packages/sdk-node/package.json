@@ -29,7 +29,11 @@
         "format": "npx prettier --write \"src/**/*.ts\"",
         "lint": "npx eslint \"src/**/*\"",
         "lint:fix": "npx eslint \"src/**/*\" --fix",
-        "publish": "yarn npm publish"
+        "publish": "yarn npm publish",
+        "test": "vitest --run --passWithNoTests --bail 1",
+        "test:watch": "vitest",
+        "test:ui": "vitest --ui --coverage.enabled=true",
+        "coverage": "vitest run --coverage"
     },
     "dependencies": {
         "@chathqio/app-sdk-contracts": "*"
@@ -43,6 +47,7 @@
         "@types/node": "^18.16.19",
         "@typescript-eslint/eslint-plugin": "^5.62.0",
         "@typescript-eslint/parser": "^5.62.0",
+        "@vitest/ui": "^0.34.4",
         "axios": "^1.3.4",
         "eslint": "^8.45.0",
         "eslint-config-prettier": "^8.8.0",

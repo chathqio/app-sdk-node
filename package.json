@@ -19,6 +19,7 @@
     "scripts": {
         "clean": "turbo run clean",
         "build": "turbo run build",
+        "build:contracts": "turbo run build \"--filter=./packages/*contracts*\"",
         "format": "turbo run format",
         "lint": "turbo run lint",
         "lint:fix": "turbo run lint --fix",

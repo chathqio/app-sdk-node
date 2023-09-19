@@ -56,6 +56,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@chathqio/app-sdk-contracts@*, @chathqio/app-sdk-contracts@workspace:packages/sdk-contracts":
+  version: 0.0.0-use.local
+  resolution: "@chathqio/app-sdk-contracts@workspace:packages/sdk-contracts"
+  dependencies:
+    "@types/eslint": ^8.44.0
+    "@types/node": ^18.16.19
+    "@typescript-eslint/eslint-plugin": ^5.62.0
+    "@typescript-eslint/parser": ^5.62.0
+    eslint: ^8.45.0
+    eslint-config-prettier: ^8.8.0
+    eslint-import-resolver-typescript: ^3.5.5
+    eslint-plugin-import: ^2.27.5
+    eslint-plugin-prettier: ^4.2.1
+    prettier: ^2.8.8
+    rimraf: 5.0.1
+    typescript: ^4.9.5
+    vitest: ^0.33.0
+  languageName: unknown
+  linkType: soft
+
 "@chathqio/app-sdk-node-root@workspace:.":
   version: 0.0.0-use.local
   resolution: "@chathqio/app-sdk-node-root@workspace:."
@@ -74,6 +94,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@chathqio/app-sdk-node@workspace:packages/sdk-node"
   dependencies:
+    "@chathqio/app-sdk-contracts": "*"
     "@types/eslint": ^8.44.0
     "@types/node": ^18.16.19
     "@typescript-eslint/eslint-plugin": ^5.62.0
@@ -5404,11 +5425,11 @@ __metadata:
 
 "typescript@patch:typescript@^4.9.5#~builtin<compat/typescript>":
   version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=289587"
+  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=23ec76"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 1f8f3b6aaea19f0f67cba79057674ba580438a7db55057eb89cc06950483c5d632115c14077f6663ea76fd09fce3c190e6414bb98582ec80aa5a4eaf345d5b68
+  checksum: ab417a2f398380c90a6cf5a5f74badd17866adf57f1165617d6a551f059c3ba0a3e4da0d147b3ac5681db9ac76a303c5876394b13b3de75fdd5b1eaa06181c9d
   languageName: node
   linkType: hard
 

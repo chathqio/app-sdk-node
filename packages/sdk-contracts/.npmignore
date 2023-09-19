@@ -1,0 +1,10 @@
+.env
+.env*
+.turbo
+.eslintrc*
+
+node_modules
+src
+.npmignore
+tsconfig*
+vite*

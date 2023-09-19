@@ -1,0 +1,50 @@
+{
+    "name": "@chathqio/app-sdk-contracts",
+    "description": "The contracts for official NodeJS SDK for ChatHQ 3rd party extensions and integrations",
+    "version": "0.1.1",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "author": {
+        "name": "ChatHQ, Inc.",
+        "url": "https://www.chathq.io"
+    },
+    "files": [
+        "lib"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chathqio/app-sdk-contracts.git",
+        "directory": "packages/sdk-contracts"
+    },
+    "bugs": {
+        "url": "https://github.com/chathqio/app-sdk-contracts/issues"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "scripts": {
+        "clean": "rimraf lib",
+        "prebuild": "yarn clean",
+        "build": "tsc -b",
+        "format": "npx prettier --write \"src/**/*.ts\"",
+        "lint": "npx eslint \"src/**/*\"",
+        "lint:fix": "npx eslint \"src/**/*\" --fix",
+        "publish": "yarn npm publish"
+    },
+    "devDependencies": {
+        "@types/eslint": "^8.44.0",
+        "@types/node": "^18.16.19",
+        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/parser": "^5.62.0",
+        "eslint": "^8.45.0",
+        "eslint-config-prettier": "^8.8.0",
+        "eslint-import-resolver-typescript": "^3.5.5",
+        "eslint-plugin-import": "^2.27.5",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.8.8",
+        "rimraf": "5.0.1",
+        "typescript": "^4.9.5",
+        "vitest": "^0.33.0"
+    },
+    "packageManager": "yarn@3.6.1"
+}

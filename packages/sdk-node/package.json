@@ -25,11 +25,14 @@
     "scripts": {
         "clean": "rimraf lib",
         "prebuild": "yarn clean",
-        "build": "nest build",
+        "build": "tsc -b",
         "format": "npx prettier --write \"src/**/*.ts\"",
         "lint": "npx eslint \"src/**/*\"",
         "lint:fix": "npx eslint \"src/**/*\" --fix",
         "publish": "yarn npm publish"
+    },
+    "dependencies": {
+        "@chathqio/app-sdk-contracts": "*"
     },
     "peerDependencies": {
         "axios": "^1.3.4",

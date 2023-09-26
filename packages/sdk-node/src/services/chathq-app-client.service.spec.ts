@@ -12,6 +12,7 @@ const APP_CLIENT_ID /*     */ = env.VITE_TEST_APP_CLIENT_ID;
 const APP_CLIENT_SECRET /* */ = env.VITE_TEST_APP_CLIENT_SECRET;
 const SSO_TOKEN /*         */ = env.VITE_TEST_SSO_TOKEN;
 const BASE_URL /*          */ = env.VITE_TEST_BASE_URL;
+const ACCOUNT_ID /*        */ = env.VITE_TEST_ACCOUNT_ID;
 
 const OPTIONS_FROM_ENV: AppClientOptions = {
     appClientId: APP_CLIENT_ID,
@@ -91,10 +92,26 @@ describe(ChatHQAppClient.name, () => {
         it('should return a list of webhooks', async () => {
             const service = serviceFactory()();
             const ssoToken = await service.generateAccessToken(SSO_TOKEN);
-            const webhooks = await service.listWebhooks(ssoToken.accessToken);
+            const webhooks = await service.listWebhooks(
+                ssoToken.accessToken,
+                ACCOUNT_ID
+            );
             expectTypeOf(webhooks).toBeArray();
             expect(webhooks).toBeDefined();
             expect(webhooks).not.toBeNull();
+        });
+    });
+
+    describe('getWebhookEventNames', () => {
+        it('should return a list of event names', async () => {
+            const service = serviceFactory()();
+            const ssoToken = await service.generateAccessToken(SSO_TOKEN);
+            const eventNames = await service.getWebhookEventNames(
+                ssoToken.accessToken
+            );
+            expectTypeOf(eventNames).toBeArray();
+            expect(eventNames).toBeDefined();
+            expect(eventNames).not.toBeNull();
         });
     });
 });

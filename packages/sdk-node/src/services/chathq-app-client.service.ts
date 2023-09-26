@@ -14,8 +14,6 @@ import { LIST_ENGAGMENT_WIDGETS_QUERY } from '../graphql';
 
 const ENDPOINT_DATA_GRAPH = '/graphql';
 
-const ENDPOINT_DATA_WEBHOOKS = '/webhooks';
-
 export class ChatHQAppClient extends ChatHQAppClientBase {
     //#region Constructor
 
@@ -50,7 +48,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
             }
         });
 
-        const { items, ...pagination } = data?.account?.engagementWidgets;
+        const { items, ...pagination } = data?.engagementWidgets;
         const widgets = items?.map((item: any) => ({
             id: item.id,
             name: item.data.config.name,
@@ -68,33 +66,14 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
     //#endregion Widgets
 
     //#region Webhooks
-    async listWebhooks(accessToken: string) {
-        try {
-            const { data } = await this.get<IWebhookBillingSubscription[]>(
-                `${ENDPOINT_DATA_WEBHOOKS}/all`,
-                accessToken,
-                {}
-            );
+    async listWebhooks(accessToken: string, accountId: string) {
+        const { data } = await this.get<IWebhookBillingSubscription[]>(
+            `${accountId}/webhooks`,
+            accessToken,
+            {}
+        );
 
-            return data;
-        } catch (err) {
-            throw err;
-        }
-    }
-
-    async deleteAllWebhooks(accessToken: string) {
-        try {
-            const { data } = await this.delete<{
-                data: {
-                    acknowledged: boolean;
-                    deletedCount: number;
-                };
-            }>(`${ENDPOINT_DATA_WEBHOOKS}/all`, accessToken, {});
-
-            return data;
-        } catch (err) {
-            throw err;
-        }
+        return data;
     }
 
     async createWebhook(
@@ -103,77 +82,73 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         event: LivechatEventName,
         url: string
     ) {
-        try {
-            const { data } = await this.post<{
-                data: IWebhookBillingSubscription;
-            }>(ENDPOINT_DATA_WEBHOOKS, accessToken, {
-                accountId,
+        const { data } = await this.post<IWebhookBillingSubscription>(
+            `${accountId}/webhooks`,
+            accessToken,
+            {
                 event,
                 url
-            });
+            }
+        );
 
-            return data;
-        } catch (err) {
-            throw err;
-        }
+        return data;
     }
 
     async getWebhook(
         accessToken: string,
         accountId: string,
-        event: LivechatEventName,
-        url: string
+        webhookId: string
     ) {
-        try {
-            const requestParams = `accountId=${accountId}&event=${event}&url=${encodeURI(
-                url
-            )}`;
-            const { data } = await this.get<{ data: { id: string } }>(
-                `${ENDPOINT_DATA_WEBHOOKS}?${requestParams}`,
-                accessToken
-            );
+        const { data } = await this.get<IWebhookBillingSubscription>(
+            `${accountId}/webhooks/${webhookId}`,
+            accessToken
+        );
 
-            return data;
-        } catch (err) {
-            throw err;
-        }
+        return data;
     }
 
-    async deleteWebhook(
+    async addWebhookSubscription(
         accessToken: string,
         accountId: string,
-        event: LivechatEventName,
+        webhookId: string,
         url: string
     ) {
-        try {
-            const { data } = await this.delete<{
-                data: IWebhookBillingSubscription;
-            }>(`${ENDPOINT_DATA_WEBHOOKS}`, accessToken, {
-                data: {
-                    accountId,
-                    event,
-                    url
-                }
-            });
+        const { data } = await this.post<IWebhookBillingSubscription>(
+            `${accountId}/webhooks/${webhookId}/add-subscription`,
+            accessToken,
+            {
+                url
+            }
+        );
 
-            return data;
-        } catch (err) {
-            throw err;
-        }
+        return data;
+    }
+
+    async removeWebhookSubscription(
+        accessToken: string,
+        accountId: string,
+        webhookId: string,
+        url: string
+    ) {
+        const { data } = await this.post<IWebhookBillingSubscription>(
+            `${accountId}/webhooks/${webhookId}/remove-subscription`,
+            accessToken,
+            {
+                url
+            }
+        );
+
+        return data;
     }
 
     async getWebhookEventNames(accessToken: string) {
-        try {
-            const { data } = await this.get<{ data: string[] }>(
-                `${ENDPOINT_DATA_WEBHOOKS}/event-names`,
-                accessToken,
-                {}
-            );
+        const { data } = await this.get<string[]>(
+            `webhooks/event-names`,
+            accessToken,
+            {}
+        );
 
-            return data;
-        } catch (err) {
-            throw err;
-        }
+        return data;
     }
 
     //#endregion Webhooks

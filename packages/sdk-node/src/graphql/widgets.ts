@@ -4,28 +4,26 @@ export const LIST_ENGAGMENT_WIDGETS_QUERY = /* graphql */ `
     $offset: Float, 
     $limit: Float
   ) {
-    account(id: $accountId) {
-      _id
-      id
-      name
-      engagementWidgets(input: {
-        offset: $offset, 
-        limit: $limit
-      }) {
+    engagementWidgets(
+        accountId: $accountId,
+        input: {
+            offset: $offset, 
+            limit: $limit
+        }
+    ) {
         count
         limit
         offset
         items {
-          _id
-          id
-          data {
-            locationId
-            config {
-              name
+            _id
+            id
+            data {
+                locationId
+                config {
+                    name
+                }
             }
-          }
         }
-      }
     }
   }
 `;

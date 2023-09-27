@@ -107,6 +107,19 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         return data;
     }
 
+    async deleteWebhook(
+        accessToken: string,
+        accountId: string,
+        webhookId: string
+    ) {
+        const { data } = await this.delete<IWebhookBillingSubscription>(
+            `${accountId}/webhooks/${webhookId}`,
+            accessToken
+        );
+
+        return data;
+    }
+
     async addWebhookSubscription(
         accessToken: string,
         accountId: string,

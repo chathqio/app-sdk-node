@@ -29,7 +29,7 @@
         "format": "npx prettier --write \"src/**/*.ts\"",
         "lint": "npx eslint \"src/**/*\"",
         "lint:fix": "npx eslint \"src/**/*\" --fix",
-        "publish": "yarn npm publish -- --access public",
+        "publish": "yarn npm publish --access public",
         "test": "vitest --run --passWithNoTests --bail 1",
         "test:watch": "vitest",
         "test:ui": "vitest --ui --coverage.enabled=true",

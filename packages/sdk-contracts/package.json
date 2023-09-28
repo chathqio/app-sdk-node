@@ -13,11 +13,11 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/chathqio/app-sdk-contracts.git",
+        "url": "https://github.com/chathqio/app-sdk-node.git",
         "directory": "packages/sdk-contracts"
     },
     "bugs": {
-        "url": "https://github.com/chathqio/app-sdk-contracts/issues"
+        "url": "https://github.com/chathqio/app-sdk-node/issues"
     },
     "engines": {
         "node": ">=18.0.0"

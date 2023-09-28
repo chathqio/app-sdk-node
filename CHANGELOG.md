@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
-# [0.2.0](https://github.com/chathqio/app-sdk-node/compare/v0.1.1...v0.2.0) (2023-09-27)
+## [0.2.0](https://github.com/chathqio/app-sdk-node/compare/v0.1.1...v0.2.0) (2023-09-27)
 
 ### Features
 
@@ -21,6 +21,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### Features
 
-- add plain TS app client ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))
-- add generateAccessToken opration ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))
-- add listEngagementWidgets opration ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))
+* add plain TS app client ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))
+* add generateAccessToken opration ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))
+* add listEngagementWidgets opration ([3d99cd3](https://github.com/chathqio/app-sdk-node/commit/3d99cd3c104025238b0be8d6a3c1ff9335508054))

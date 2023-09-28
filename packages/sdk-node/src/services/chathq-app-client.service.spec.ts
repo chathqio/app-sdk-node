@@ -1,6 +1,8 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 import { config } from 'dotenv';
 
+import { EVENT_LIVECHAT_SESSION } from '@chathqio/app-sdk-contracts';
+
 import { AppClientOptions } from '../contracts';
 
 import { ChatHQAppClient } from './chathq-app-client.service';
@@ -120,7 +122,7 @@ describe(ChatHQAppClient.name, () => {
             const webhook = await service.createWebhook(
                 ssoToken.accessToken,
                 ACCOUNT_ID,
-                'LIVECHAT_SESSION',
+                EVENT_LIVECHAT_SESSION,
                 `${TEST_WEBHOOK_SUBSCRIPTION}/v1`
             );
             expectTypeOf(webhook).toBeObject();

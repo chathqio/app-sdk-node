@@ -1,5 +1,5 @@
 import {
-    IWebhookBillingSubscription,
+    IWebhookSubscription,
     LivechatEventName
 } from '@chathqio/app-sdk-contracts';
 
@@ -67,7 +67,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
 
     //#region Webhooks
     async listWebhooks(accessToken: string, accountId: string) {
-        const { data } = await this.get<IWebhookBillingSubscription[]>(
+        const { data } = await this.get<IWebhookSubscription[]>(
             `${accountId}/webhooks`,
             accessToken,
             {}
@@ -82,7 +82,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         event: LivechatEventName,
         url: string
     ) {
-        const { data } = await this.post<IWebhookBillingSubscription>(
+        const { data } = await this.post<IWebhookSubscription>(
             `${accountId}/webhooks`,
             accessToken,
             {
@@ -99,7 +99,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         accountId: string,
         webhookId: string
     ) {
-        const { data } = await this.get<IWebhookBillingSubscription>(
+        const { data } = await this.get<IWebhookSubscription>(
             `${accountId}/webhooks/${webhookId}`,
             accessToken
         );
@@ -112,7 +112,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         accountId: string,
         webhookId: string
     ) {
-        const { data } = await this.delete<IWebhookBillingSubscription>(
+        const { data } = await this.delete<IWebhookSubscription>(
             `${accountId}/webhooks/${webhookId}`,
             accessToken
         );
@@ -126,7 +126,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         webhookId: string,
         url: string
     ) {
-        const { data } = await this.post<IWebhookBillingSubscription>(
+        const { data } = await this.post<IWebhookSubscription>(
             `${accountId}/webhooks/${webhookId}/add-subscription`,
             accessToken,
             {
@@ -143,7 +143,7 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         webhookId: string,
         url: string
     ) {
-        const { data } = await this.post<IWebhookBillingSubscription>(
+        const { data } = await this.post<IWebhookSubscription>(
             `${accountId}/webhooks/${webhookId}/remove-subscription`,
             accessToken,
             {

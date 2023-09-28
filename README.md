@@ -1,4 +1,4 @@
-# @chathqio/app-sdk-node
+# @chathq-oss/app-sdk-node
 
 The official NodeJS SDK for ChatHQ 3rd party extensions and integrations
 
@@ -23,7 +23,7 @@ npm login -registry https://npm.pkg.github.com
 finally, in your repository, run:
 
 ```shell
-npm i -S @chathqio/app-sdk-node
+npm i -S @chathq-oss/app-sdk-node
 ```
 
 ### Installing with Yarn v2+
@@ -40,13 +40,13 @@ npmScopes:
 Add a persistent environment variable called `GHCR_AUTH_TOKEN` and set its value to your GitHub `PAT`. Finally, in your repository, run:
 
 ```shell
-yarn add @chathqio/app-sdk-node
+yarn add @chathq-oss/app-sdk-node
 ```
 
 ## How to use
 
 ```javascript
-import { ChatHQAppClient } from '@chathqio/app-sdk-node';
+import { ChatHQAppClient } from '@chathq-oss/app-sdk-node';
 
 const client = new ChatHQAppClient({
     appClientId: process.env.CHATHQ_APP_CLIENT_ID,

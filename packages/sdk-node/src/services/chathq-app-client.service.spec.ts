@@ -1,7 +1,7 @@
 import { describe, expect, expectTypeOf, it } from 'vitest';
 import { config } from 'dotenv';
 
-import { EVENT_LIVECHAT_SESSION } from '@chathqio/app-sdk-contracts';
+import { EVENT_LIVECHAT_SESSION } from '@chathq-oss/app-sdk-contracts';
 
 import { AppClientOptions } from '../contracts';
 

@@ -1,5 +1,5 @@
 {
-    "name": "@chathqio/app-sdk-node-root",
+    "name": "@chathq-oss/app-sdk-node-root",
     "description": "The official NodeJS SDK for ChatHQ 3rd party extensions and integrations",
     "private": true,
     "version": "0.2.2",

@@ -56,9 +56,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chathqio/app-sdk-contracts@*, @chathqio/app-sdk-contracts@workspace:packages/sdk-contracts":
+"@chathq-oss/app-sdk-contracts@*, @chathq-oss/app-sdk-contracts@workspace:packages/sdk-contracts":
   version: 0.0.0-use.local
-  resolution: "@chathqio/app-sdk-contracts@workspace:packages/sdk-contracts"
+  resolution: "@chathq-oss/app-sdk-contracts@workspace:packages/sdk-contracts"
   dependencies:
     "@types/eslint": ^8.44.0
     "@types/node": ^18.16.19
@@ -76,9 +76,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chathqio/app-sdk-node-root@workspace:.":
+"@chathq-oss/app-sdk-node-root@workspace:.":
   version: 0.0.0-use.local
-  resolution: "@chathqio/app-sdk-node-root@workspace:."
+  resolution: "@chathq-oss/app-sdk-node-root@workspace:."
   dependencies:
     "@types/estree": ^1.0.1
     "@vitest/coverage-v8": ^0.33.0
@@ -90,11 +90,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@chathqio/app-sdk-node@workspace:packages/sdk-node":
+"@chathq-oss/app-sdk-node@workspace:packages/sdk-node":
   version: 0.0.0-use.local
-  resolution: "@chathqio/app-sdk-node@workspace:packages/sdk-node"
+  resolution: "@chathq-oss/app-sdk-node@workspace:packages/sdk-node"
   dependencies:
-    "@chathqio/app-sdk-contracts": "*"
+    "@chathq-oss/app-sdk-contracts": "*"
     "@types/eslint": ^8.44.0
     "@types/node": ^18.16.19
     "@typescript-eslint/eslint-plugin": ^5.62.0

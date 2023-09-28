@@ -1,7 +1,7 @@
 import {
     IWebhookSubscription,
     LivechatEventName
-} from '@chathqio/app-sdk-contracts';
+} from '@chathq-oss/app-sdk-contracts';
 
 import { ChatHQAppClientBase } from '../base';
 import {

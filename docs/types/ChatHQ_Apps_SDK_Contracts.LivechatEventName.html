@@ -1,28 +1,25 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>ChatHQ Apps SDK - v0.3.2</title><meta name="description" content="Documentation for ChatHQ Apps SDK"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script><link rel="icon" href="favicon.ico" />
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>LivechatEventName | ChatHQ Apps SDK - v0.3.2</title><meta name="description" content="Documentation for ChatHQ Apps SDK"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script><link rel="icon" href="../favicon.ico" />
 </head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
-<div class="table-cell" id="tsd-search" data-base=".">
+<div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
 <div class="field">
 <div id="tsd-toolbar-links"></div></div>
 <ul class="results">
 <li class="state loading">Preparing search index...</li>
-<li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">ChatHQ Apps SDK - v0.3.2</a></div>
+<li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">ChatHQ Apps SDK - v0.3.2</a></div>
 <div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-menu"></use></svg></a></div></div></header>
 <div class="container container-main">
 <div class="col-content">
 <div class="tsd-page-title">
-<h2>ChatHQ Apps SDK - v0.3.2</h2></div>
-<div class="tsd-panel tsd-typography"><a id="md:chathq-ossapp-sdk-node" class="tsd-anchor"></a><h1><a href="#md:chathq-ossapp-sdk-node">@chathq-oss/app-sdk-node</a></h1><p>The official NodeJS SDK for ChatHQ 3rd party extensions and integrations</p>
-<a id="md:installation" class="tsd-anchor"></a><h2><a href="#md:installation">Installation</a></h2><p>ChatHQ OSS packages are hosted on <a href="https://www.npmjs.com/search?q=%40chathq-oss">NPMJS</a> as public packages. In the past we would use GitHub Package registry, which required setting up a personal access token (<code>PAT</code>) and adding it to your <code>.npmrc</code> file. This is no longer needed.</p>
-<a id="md:installing-with-npm" class="tsd-anchor"></a><h3><a href="#md:installing-with-npm">Installing with NPM</a></h3><pre><code class="language-shell"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-3">-S</span><span class="hl-1"> </span><span class="hl-2">@chathq-oss/app-sdk-node</span>
-</code><button>Copy</button></pre>
-<a id="md:installing-with-yarn-v2" class="tsd-anchor"></a><h3><a href="#md:installing-with-yarn-v2">Installing with Yarn v2+</a></h3><pre><code class="language-shell"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@chathq-oss/app-sdk-node</span>
-</code><button>Copy</button></pre>
-<a id="md:how-to-use" class="tsd-anchor"></a><h2><a href="#md:how-to-use">How to use</a></h2><pre><code class="language-javascript"><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-5">ChatHQAppClient</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@chathq-oss/app-sdk-node&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">client</span><span class="hl-1"> = </span><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-0">ChatHQAppClient</span><span class="hl-1">({</span><br/><span class="hl-1">    </span><span class="hl-5">appClientId:</span><span class="hl-1"> </span><span class="hl-5">process</span><span class="hl-1">.</span><span class="hl-5">env</span><span class="hl-1">.</span><span class="hl-6">CHATHQ_APP_CLIENT_ID</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-5">appClientSecret:</span><span class="hl-1"> </span><span class="hl-5">process</span><span class="hl-1">.</span><span class="hl-5">env</span><span class="hl-1">.</span><span class="hl-6">CHATHQ_APP_CLIENT_SECRET</span><span class="hl-1">,</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">async</span><span class="hl-1"> </span><span class="hl-3">function</span><span class="hl-1"> </span><span class="hl-0">getWidgetList</span><span class="hl-1">() {</span><br/><span class="hl-1">    </span><span class="hl-7">// get this from your integration page in ChatHQ Portal</span><br/><span class="hl-1">    </span><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">userSsoToken</span><span class="hl-1"> = </span><span class="hl-2">&#39;...&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-1">    </span><span class="hl-3">const</span><span class="hl-1"> { </span><span class="hl-6">accessToken</span><span class="hl-1">, </span><span class="hl-6">accountId</span><span class="hl-1"> } = </span><span class="hl-5">client</span><span class="hl-1">.</span><span class="hl-0">generateAccessToken</span><span class="hl-1">(</span><span class="hl-5">userSsoToken</span><span class="hl-1">);</span><br/><br/><span class="hl-1">    </span><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-6">widgetList</span><span class="hl-1"> = </span><span class="hl-4">await</span><span class="hl-1"> </span><span class="hl-5">client</span><span class="hl-1">.</span><span class="hl-0">listEngagementWidgets</span><span class="hl-1">(</span><span class="hl-5">accessToken</span><span class="hl-1">, {</span><br/><span class="hl-1">        </span><span class="hl-5">accountId</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-5">offset:</span><span class="hl-1"> </span><span class="hl-8">0</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-5">limit:</span><span class="hl-1"> </span><span class="hl-8">10</span><span class="hl-1">,</span><br/><span class="hl-1">    });</span><br/><br/><span class="hl-1">    </span><span class="hl-5">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-6">JSON</span><span class="hl-1">.</span><span class="hl-0">stringify</span><span class="hl-1">(</span><span class="hl-5">widgetList</span><span class="hl-1">, </span><span class="hl-3">null</span><span class="hl-1">, </span><span class="hl-8">4</span><span class="hl-1">));</span><br/><span class="hl-1">}</span>
-</code><button>Copy</button></pre>
-<a id="md:contributing" class="tsd-anchor"></a><h2><a href="#md:contributing">Contributing</a></h2><p>We welcome contributions to this project in the form of bug reports, comments, discussions, and feature requests. In the future we may considering accepting pull requests. If you are interested in contributing, please open an issue explaining your idea and tag Serge (<code>@cbnsndwch</code>) on it.</p>
-</div></div>
+<ul class="tsd-breadcrumb">
+<li><a href="../index.html">ChatHQ Apps SDK</a></li>
+<li><a href="../modules/ChatHQ_Apps_SDK_Contracts.html">ChatHQ Apps SDK Contracts</a></li>
+<li><a href="ChatHQ_Apps_SDK_Contracts.LivechatEventName.html">LivechatEventName</a></li></ul>
+<h1>Type alias LivechatEventName</h1></div>
+<div class="tsd-signature"><span class="tsd-kind-type-alias">Livechat<wbr/>Event<wbr/>Name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_VISITOR_MESSAGE.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_VISITOR_MESSAGE</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_AGENT_MESSAGE.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_AGENT_MESSAGE</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_SESSION.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_SESSION</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_SESSION_START.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_SESSION_START</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_SESSION_TAKEN.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_SESSION_TAKEN</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_SESSION_QUEUED.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_SESSION_QUEUED</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_SESSION_FORWARDED.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_SESSION_FORWARDED</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_EDIT.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_EDIT</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">typeof </span><a href="../variables/ChatHQ_Apps_SDK_Contracts.EVENT_LIVECHAT_LEAD_CAPTURE.html" class="tsd-signature-type tsd-kind-variable">EVENT_LIVECHAT_LEAD_CAPTURE</a></div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/chathqio/app-sdk-node/blob/97fe3d8/packages/sdk-contracts/src/webhooks/livechat/livechat.events.ts#L13">webhooks/livechat/livechat.events.ts:13</a></li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -37,33 +34,17 @@
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-checkbox"></use></svg><span>Inherited</span></label></li>
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-checkbox"></use></svg><span>External</span></label></li></ul></form></div>
 <div class="tsd-theme-toggle">
-<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
-<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
-<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
-<div class="tsd-accordion-details">
-<ul>
-<li>
-<ul>
-<li><a href="#md:chathq-ossapp-sdk-node"><span>@chathq-<wbr/>oss/app-<wbr/>sdk-<wbr/>node</span></a></li>
-<li>
-<ul>
-<li><a href="#md:installation"><span>Installation</span></a></li>
-<li>
-<ul>
-<li><a href="#md:installing-with-npm"><span>Installing with NPM</span></a></li>
-<li><a href="#md:installing-with-yarn-v2"><span>Installing with <wbr/>Yarn v2+</span></a></li></ul></li>
-<li><a href="#md:how-to-use"><span>How to use</span></a></li>
-<li><a href="#md:contributing"><span>Contributing</span></a></li></ul></li></ul></li></ul></div></details></div>
+<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div></div>
 <div class="site-menu">
-<nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>ChatHQ Apps SDK - v0.3.2</span></a>
-<ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base=".">
-<li><a href="modules/ChatHQ_Apps_SDK_Contracts.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>ChatHQ Apps SDK Contracts - v0.3.2</a></li>
-<li><a href="modules/ChatHQ_Apps_NodeJS_SDK.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>ChatHQ Apps NodeJS SDK - v0.3.2</a></li></ul></nav></div></div></div>
+<nav class="tsd-navigation"><a href="../index.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>ChatHQ Apps SDK - v0.3.2</span></a>
+<ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="..">
+<li><a href="../modules/ChatHQ_Apps_SDK_Contracts.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>ChatHQ Apps SDK Contracts - v0.3.2</a></li>
+<li><a href="../modules/ChatHQ_Apps_NodeJS_SDK.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2"></use></svg>ChatHQ Apps NodeJS SDK - v0.3.2</a></li></ul></nav></div></div></div>
 <div class="tsd-generator">
 <p style="line-height: 28px;">Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a><br>
             <span id="generation-date"></span>
             <script>
-                window.GENERATION_DATE = 1696009966350;
+                window.GENERATION_DATE = 1696009966374;
 
                 (() => {
                     

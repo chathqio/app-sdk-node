@@ -29,7 +29,7 @@ export abstract class ChatHQAppClientBase {
     protected readonly appClientSecret: string;
     protected readonly authStrategy: AuthStrategy;
 
-    protected scope: string[];
+    protected scope: string[] = [];
 
     //#endregion Protected Properties
 

@@ -10,11 +10,11 @@ import { ChatHQAppClient } from './chathq-app-client.service';
 config();
 
 const env = process.env;
-const APP_CLIENT_ID /*     */ = env.VITE_TEST_APP_CLIENT_ID;
-const APP_CLIENT_SECRET /* */ = env.VITE_TEST_APP_CLIENT_SECRET;
-const SSO_TOKEN /*         */ = env.VITE_TEST_SSO_TOKEN;
-const BASE_URL /*          */ = env.VITE_TEST_BASE_URL;
-const ACCOUNT_ID /*        */ = env.VITE_TEST_ACCOUNT_ID;
+const APP_CLIENT_ID /*     */ = env.VITE_TEST_APP_CLIENT_ID!;
+const APP_CLIENT_SECRET /* */ = env.VITE_TEST_APP_CLIENT_SECRET!;
+const SSO_TOKEN /*         */ = env.VITE_TEST_SSO_TOKEN!;
+const BASE_URL /*          */ = env.VITE_TEST_BASE_URL!;
+const ACCOUNT_ID /*        */ = env.VITE_TEST_ACCOUNT_ID!;
 
 const TEST_WEBHOOK_SUBSCRIPTION =
     'http://test_webhook_subscription.chathq.io.test';

@@ -94,6 +94,19 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         return data;
     }
 
+    /**
+     * Creates a new webhook.
+     *
+     * Requires permissions:
+     * - `webhooks:write`
+     *
+     * **NOTE:** `IWebhookSubscription` is defined in `@chathq-oss/app-sdk-contracts`.
+     *
+     * @param accessToken The access token for the account.
+     * @param accountId The account ID in `base64url` format.
+     * @param event  The event name of the subscription
+     * @param url The url to subscribe
+     */
     async createWebhook(
         accessToken: string,
         accountId: string,
@@ -112,6 +125,18 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         return data;
     }
 
+    /**
+     * Retrieves a webhook data.
+     *
+     * Requires permissions:
+     * - `webhooks:read`
+     *
+     * **NOTE:** `IWebhookSubscription` is defined in `@chathq-oss/app-sdk-contracts`.
+     *
+     * @param accessToken The access token for the account.
+     * @param accountId The account ID in `base64url` format.
+     * @param webhookId The id of the requested webhook
+     */
     async getWebhook(
         accessToken: string,
         accountId: string,
@@ -125,6 +150,18 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         return data;
     }
 
+    /**
+     * Deletes webhook.
+     *
+     * Requires permissions:
+     * - `webhooks:write`
+     *
+     * **NOTE:** `IWebhookSubscription` is defined in `@chathq-oss/app-sdk-contracts`.
+     *
+     * @param accessToken The access token for the account.
+     * @param accountId The account ID in `base64url` format.
+     * @param webhookId The id of the requested webhook
+     */
     async deleteWebhook(
         accessToken: string,
         accountId: string,
@@ -138,6 +175,19 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         return data;
     }
 
+    /**
+     * Adds a subscription to an existing webhook.
+     *
+     * Requires permissions:
+     * - `webhooks:write`
+     *
+     * **NOTE:** `IWebhookSubscription` is defined in `@chathq-oss/app-sdk-contracts`.
+     *
+     * @param accessToken The access token for the account.
+     * @param accountId The account ID in `base64url` format.
+     * @param webhookId The id of the requested webhook
+     * @param url The url to add
+     */
     async addWebhookSubscription(
         accessToken: string,
         accountId: string,
@@ -155,6 +205,19 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         return data;
     }
 
+    /**
+     * Removes a subscription from an existing webhook.
+     *
+     * Requires permissions:
+     * - `webhooks:write`
+     *
+     * **NOTE:** `IWebhookSubscription` is defined in `@chathq-oss/app-sdk-contracts`.
+     *
+     * @param accessToken The access token for the account.
+     * @param accountId The account ID in `base64url` format.
+     * @param webhookId The id of the requested webhook
+     * @param url The url to remove
+     */
     async removeWebhookSubscription(
         accessToken: string,
         accountId: string,
@@ -172,6 +235,11 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
         return data;
     }
 
+    /**
+     * Retrieves the list of available event names.
+     *
+     * @param accessToken The access token for the account.
+     */
     async getWebhookEventNames(accessToken: string) {
         const { data } = await this.get<string[]>(
             `webhooks/event-names`,

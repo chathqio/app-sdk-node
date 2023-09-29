@@ -69,7 +69,22 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
     //#endregion Widgets
 
     //#region Webhooks
-    async listWebhooks(accessToken: string, accountId: string) {
+
+    /**
+     * List all webhooks for an account.
+     *
+     * Requires permissions:
+     * - `webhooks:read`
+     *
+     * **NOTE:** `IWebhookSubscription` is defined in `@chathq-oss/app-sdk-contracts`.
+     *
+     * @param accessToken The access token for the account.
+     * @param accountId The account ID in `base64url` format.
+     */
+    async listWebhooks(
+        accessToken: string,
+        accountId: string
+    ): Promise<IWebhookSubscription[]> {
         const { data } = await this.get<IWebhookSubscription[]>(
             `${accountId}/webhooks`,
             accessToken,

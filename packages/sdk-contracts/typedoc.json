@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "../../typedoc.base.json"
+    ],
+    "name": "ChatHQ Apps SDK Contracts",
+    "entryPoints": [
+        "src/index.ts"
+    ]
+}

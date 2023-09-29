@@ -23,14 +23,6 @@
         "publish": {
             "dependsOn": ["^build"],
             "outputs": []
-        },
-        "docs": {
-            "dependsOn": ["^docs"],
-            "outputs": []
-        },
-        "docs:serve": {
-            "dependsOn": ["^docs:serve"],
-            "outputs": []
         }
     }
 }

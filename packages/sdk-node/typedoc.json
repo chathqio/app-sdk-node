@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "../../typedoc.base.json"
+    ],
+    "name": "ChatHQ Apps NodeJS SDK",
+    "entryPoints": [
+        "src/index.ts"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "exclude": ["**/*.spec.ts", "**/*.test.ts"],
+    "includeVersion": true,
+    "plugin": ["typedoc-plugin-mdn-links"],
+    "resolveUtilityTypes": true
+}

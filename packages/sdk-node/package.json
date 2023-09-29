@@ -26,8 +26,6 @@
         "clean": "rimraf lib",
         "prebuild": "yarn clean",
         "build": "tsc -b",
-        "docs": "yarn build && typedoc --out ../../docs src/index.ts",
-        "docs:serve": "yarn docs && cd ../../docs && http-server -o -p 8080",
         "format": "npx prettier --write \"src/**/*.ts\"",
         "lint": "npx eslint \"src/**/*\"",
         "lint:fix": "npx eslint \"src/**/*\" --fix",
@@ -58,7 +56,7 @@
         "eslint-plugin-prettier": "^4.2.1",
         "prettier": "^2.8.8",
         "rimraf": "5.0.1",
-        "typedoc": "^0.25.1",
+        "typedoc-plugin-mdn-links": "^3.1.0",
         "typescript": "^4.9.5",
         "vitest": "^0.33.0",
         "zod": "^3.21.4"

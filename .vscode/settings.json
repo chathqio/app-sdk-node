@@ -13,6 +13,7 @@
         ".eslintrc.js": ".eslintrc.*.js, .eslintignore",
         ".eslintrc.cjs": ".eslintrc.*.cjs, .eslintignore",
         "tsconfig.json": "tsconfig.*.json, tsconfig.tsbuildinfo",
+        "typedoc.config.js": "typedoc.*.jsonc, typedoc.*.json",
         "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
     },
     "vite.autoStart": false,

@@ -24,6 +24,9 @@
         "lint": "turbo run lint",
         "lint:fix": "turbo run lint --fix",
         "test": "npx vitest run",
+        "docs": "yarn build && typedoc --options typedoc.config.js",
+        "docs:serve": "yarn docs && cd docs && http-server -o -p 8080",
+        "docs:serve:only": "cd docs && http-server -o -p 8080",
         "publish": "turbo run publish",
         "coverage": "npx vitest run --coverage",
         "vmajor": "yarn workspaces foreach -v --topological-dev version major",
@@ -43,8 +46,12 @@
         "@vitest/coverage-v8": "^0.33.0",
         "conventional-changelog-cli": "^3.0.0",
         "dotenv": "^16.3.1",
+        "http-server": "^14.1.1",
         "jsdom": "^22.1.0",
         "turbo": "latest",
+        "typedoc": "^0.25.1",
+        "typedoc-plugin-extras": "^3.0.0",
+        "typedoc-plugin-mdn-links": "^3.1.0",
         "vitest": "^0.33.0"
     },
     "packageManager": "yarn@3.6.1"

@@ -26,7 +26,10 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
     //#region Widgets
 
     /**
-     * Get a list of widgets.
+     * Get a list of widgets in a ChatHQ Portal account.
+     *
+     * @param {string} accessToken The access token for the account.
+     * @param {ListEngagementWidgetsInput} input Input data for the query. Includes the account ID, and pagination options.
      */
     async listEngagementWidgets(
         accessToken: string,

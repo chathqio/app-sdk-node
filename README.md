@@ -12,7 +12,7 @@ ChatHQ OSS packages are hosted on [NPMJS] as public packages. In the past we wou
 npm i -S @chathq-oss/app-sdk-node
 ```
 
-### Installing with Yarn v2+
+### Installing with Yarn
 
 ```shell
 yarn add @chathq-oss/app-sdk-node
@@ -20,12 +20,16 @@ yarn add @chathq-oss/app-sdk-node
 
 ## How to use
 
+> &nbsp;
+> **NOTE** See the documentation page for the [ChatHQAppClient class] for more details.
+> &nbsp;
+
 ```javascript
 import { ChatHQAppClient } from '@chathq-oss/app-sdk-node';
 
 const client = new ChatHQAppClient({
     appClientId: process.env.CHATHQ_APP_CLIENT_ID,
-    appClientSecret: process.env.CHATHQ_APP_CLIENT_SECRET,
+    appClientSecret: process.env.CHATHQ_APP_CLIENT_SECRET
 });
 
 async function getWidgetList() {
@@ -37,7 +41,7 @@ async function getWidgetList() {
     const widgetList = await client.listEngagementWidgets(accessToken, {
         accountId,
         offset: 0,
-        limit: 10,
+        limit: 10
     });
 
     console.log(JSON.stringify(widgetList, null, 4));
@@ -49,3 +53,4 @@ async function getWidgetList() {
 We welcome contributions to this project in the form of bug reports, comments, discussions, and feature requests. In the future we may considering accepting pull requests. If you are interested in contributing, please open an issue explaining your idea and tag Serge (`@cbnsndwch`) on it.
 
 [NPMJS]: https://www.npmjs.com/search?q=%40chathq-oss
+[ChatHQAppClient class]: https://chathqio.github.io/app-sdk-node/classes/ChatHQ_Apps_NodeJS_SDK.ChatHQAppClient.html

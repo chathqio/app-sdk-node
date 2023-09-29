@@ -1,7 +1,7 @@
 {
     "name": "@chathq-oss/app-sdk-node",
     "description": "The official NodeJS SDK for ChatHQ 3rd party extensions and integrations",
-    "version": "0.3.1",
+    "version": "0.3.2",
     "license": "MIT",
     "main": "lib/index.js",
     "author": {

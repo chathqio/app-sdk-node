@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+# [0.4.0](https://github.com/chathqio/app-sdk-node/compare/v0.3.4...v0.4.0) (2023-09-30)
+
+
+### Features
+
+* add send livechat agent message method ([3d40dce](https://github.com/chathqio/app-sdk-node/commit/3d40dced63aacb4bc18efc6756d77d0648c974a3))
+* **contract:** add livechat message contracts ([de4bfd1](https://github.com/chathqio/app-sdk-node/commit/de4bfd1ee6090333797b002979dcd45b5868a742))
+
 ## [0.2.0](https://github.com/chathqio/app-sdk-node/compare/v0.1.1...v0.2.0) (2023-09-27)
 
 ### Features

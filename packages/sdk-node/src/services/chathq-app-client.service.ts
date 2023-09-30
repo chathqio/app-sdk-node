@@ -1,6 +1,8 @@
 import {
+    IMessage,
     IWebhookSubscription,
-    LivechatEventName
+    LivechatEventName,
+    SendMessageInput
 } from '@chathq-oss/app-sdk-contracts';
 
 import { ChatHQAppClientBase } from '../base';
@@ -11,6 +13,7 @@ import {
     WidgetSummary
 } from '../contracts';
 import { LIST_ENGAGMENT_WIDGETS_QUERY } from '../graphql';
+import { base64UrlToHex } from 'src/utils';
 
 const ENDPOINT_DATA_GRAPH = '/graphql';
 
@@ -251,4 +254,43 @@ export class ChatHQAppClient extends ChatHQAppClientBase {
     }
 
     //#endregion Webhooks
+
+    // #region Livechat
+
+    /**
+     * Sends a message on the account live chat as an agent
+     *
+     * **NOTE:** `IMessage` is defined in `@chathq-oss/app-sdk-contracts`.
+     * **NOTE:** `SendMessageInput` is defined in `@chathq-oss/app-sdk-contracts`.
+     *
+     * @param accessToken The access token for the account.
+     * @param accountId The account ID in `base64url` format.
+     * @param messageInput The input containing the data for the message
+     */
+    async sendMessage(
+        accessToken: string,
+        accountId: string,
+        { roomId, message }: SendMessageInput
+    ) {
+        const { data: data } = await this.post<{
+            data: IMessage;
+            success: boolean;
+        }>(
+            `messages`,
+            accessToken,
+            {
+                rid: roomId,
+                msg: message
+            },
+            {
+                baseURL: `https://${base64UrlToHex(
+                    accountId
+                )}.live.chatwidgets.net/api/v1`
+            }
+        );
+
+        return data;
+    }
+
+    // #endregion Livechat
 }

@@ -15,6 +15,7 @@ const APP_CLIENT_SECRET /* */ = env.VITE_TEST_APP_CLIENT_SECRET!;
 const SSO_TOKEN /*         */ = env.VITE_TEST_SSO_TOKEN!;
 const BASE_URL /*          */ = env.VITE_TEST_BASE_URL!;
 const ACCOUNT_ID /*        */ = env.VITE_TEST_ACCOUNT_ID!;
+const ROOM_ID /*           */ = env.VITE_TEST_LIVECHAT_ROOM_ID!;
 
 const TEST_WEBHOOK_SUBSCRIPTION =
     'http://test_webhook_subscription.chathq.io.test';
@@ -233,6 +234,25 @@ describe(ChatHQAppClient.name, () => {
             expectTypeOf(eventNames).toBeArray();
             expect(eventNames).toBeDefined();
             expect(eventNames).not.toBeNull();
+        });
+    });
+
+    describe('sendMessage', () => {
+        it('should return a message', async () => {
+            const service = serviceFactory()();
+            const ssoToken = await service.generateAccessToken(SSO_TOKEN);
+            const message = await service.sendMessage(
+                ssoToken.accessToken,
+                ACCOUNT_ID,
+                { roomId: ROOM_ID, message: 'Testing message' }
+            );
+            expectTypeOf(message).toBeObject();
+            expect(message).not.toBeNull();
+            expect(message).toHaveProperty('data');
+            expect(message.data).toHaveProperty('msg');
+            expect(message.data.msg).equal('Testing message');
+            expect(message.data).toHaveProperty('rid');
+            expect(message.data).toHaveProperty('_id');
         });
     });
 });
